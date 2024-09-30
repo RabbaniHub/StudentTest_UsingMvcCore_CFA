@@ -1,0 +1,19 @@
+﻿<style>
+    body{
+        background-color : lightskyblue;
+    }
+</style>
+
+@{
+    ViewBag.Title = "Test Results";
+}
+
+<h2 class="mt-4">Test Results</h2>
+
+<div class="alert alert-info">
+    <p>Your score is: <strong>@ViewBag.Score</strong></p>
+    <p>Total Number Of Questions: <strong>@ViewBag.TotalQuestions</strong></p>
+    <p>Your Percentage: <strong>@ViewBag.PercentageScore</strong></p>
+</div>
+
+<a href="@Url.Action("StartTest", "User")" class="btn btn-primary">Retake Test</a>

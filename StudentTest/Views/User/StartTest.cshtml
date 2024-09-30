@@ -1,0 +1,33 @@
+﻿@model List<StudentTest.Models.Question>
+
+<style>
+    body {
+        background-color: lightgreen;
+    }
+</style>
+<h2>C# Test</h2><br>
+<h3 style="color:maroon">20 Questions With Multiple Answers,Choose One Carefully</h3><br>
+<form asp-action="Submit" method="post">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        var question = Model[i];
+        <div class="question">
+            <h4>@question.QuestionText</h4>
+            @foreach (var answer in question.Answers)
+            {
+                <div>
+                    <!-- Change the name attribute to correctly bind to the model -->
+                    <input type="radio"
+                           name="Answers[@i].SelectedAnswerId"
+                           value="@answer.AnswerId" required />
+                    <label>@answer.AnswerText</label>
+                </div>
+            }
+            <!-- Include the QuestionId as a hidden input -->
+            <input type="hidden"
+                   name="Answers[@i].QuestionId"
+                   value="@question.QuestionId" />
+        </div>
+    }
+    <button type="submit" class="btn btn-primary">Submit Test</button>
+</form>

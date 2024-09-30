@@ -1,0 +1,33 @@
+﻿@model StudentTest.Models.User
+<style>
+    .left-aligned-image {
+        float: left; 
+        margin-right: 5px; 
+        max-width: 50%; 
+        height: auto; 
+    }
+</style>
+<img src="~/RegisterImage3.png" class="left-aligned-image" alt="Test Image" />
+<center><u><h2 style="color:maroon">Welcome,Fill The Form To Register</h2></u><br></br>
+    <a href="/User/Login" class="btn btn-danger">Already Registered? Please Login Here</a>
+</center>
+<br></br>
+<center><form action="/User/Register" method="post" class="btn btn">
+ 
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="UserName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" class="form-control" required/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" class="form-control" required minlength="6"/>
+    </div><br>
+    <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</center>
+
+
